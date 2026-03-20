@@ -1,7 +1,9 @@
-
+import SideBarLeft from "./components/left-column/SideBarLeft";
 
 function App() {
-    return <></>;
+    return <>
+        <SideBarLeft />
+    </>;
 }
 
 export default App;
