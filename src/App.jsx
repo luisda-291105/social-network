@@ -2,7 +2,7 @@ import NavBar from "./components/header/NavBar";
 import Left from "./components/left-column/Left";
 import Middle from "./components/middle-column/Middle";
 import Right from "./components/right-column/Right";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 
 function App() {
     return (
