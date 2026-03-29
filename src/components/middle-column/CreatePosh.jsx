@@ -1,21 +1,20 @@
+import { useState , useEffect } from "react";
+import Input from "./createPost/Input";
+import TextH6 from "./createPost/textH6";
+import Button from "./createPost/Button";
+
 export default function CreatePosh() {
+    let [] = useState()
+
+
     return (
         <div className="w3-row-padding">
             <div className="w3-col m12">
                 <div className="w3-card w3-round w3-white">
                     <div className="w3-container w3-padding">
-                        <h6 className="w3-opacity">
-                            Social Media template by w3.css
-                        </h6>
-                        <p
-                            contenteditable="true"
-                            className="w3-border w3-padding"
-                        >
-                            Status: Feeling Blue
-                        </p>
-                        <button type="button" className="w3-button w3-theme">
-                            <i className="fa fa-pencil"></i>  Post
-                        </button>
+                        <TextH6 />
+                        <Input />
+                        <Button />
                     </div>
                 </div>
             </div>
