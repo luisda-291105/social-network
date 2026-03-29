@@ -1,92 +1,42 @@
 import { useState } from "react";
+import MyGroups from "./acordionMenssage/myGroups";
+import MyEvents from "./acordionMenssage/MyEvents";
+import Photos from "./acordionMenssage/Photos";
 
 export default function Acordion() {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
 
     let handleShow = () => {
         setShow(!show);
-        console.log(show);
     };
 
     return (
         <div className="w3-card w3-round">
             <div className="w3-white">
                 <button
-                    onclick={handleShow}
+                    onClick={handleShow}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-circle-o-notch fa-fw w3-margin-right"></i>{" "}
                     My Groups
                 </button>
-                {!show && (
-                    <div id="Demo1" className="w3-hide w3-container">
-                        <p>Some text..</p> : ""
-                    </div>
-                )}
+                {!show && <MyGroups />}
                 <button
-                    onclick="myFunction('Demo2')"
+                    onClick={handleShow}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-calendar-check-o fa-fw w3-margin-right"></i>{" "}
                     My Events
                 </button>
-                <div id="Demo2" className="w3-hide w3-container">
-                    <p>Some other text..</p>
-                </div>
+                {!show && <MyEvents />}
                 <button
-                    onclick="myFunction('Demo3')"
+                    onClick={handleShow}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-users fa-fw w3-margin-right"></i> My
                     Photos
                 </button>
-                <div id="Demo3" className="w3-hide w3-container">
-                    <div className="w3-row-padding">
-                        <br />
-                        <div className="w3-half">
-                            <img
-                                src="https://www.w3schools.com/w3images/lights.jpg"
-                                style={{ width: "100%" }}
-                                className="w3-margin-bottom"
-                            />
-                        </div>
-                        <div className="w3-half">
-                            <img
-                                src="https://www.w3schools.com/w3images/nature.jpg"
-                                style={{ width: "100%" }}
-                                className="w3-margin-bottom"
-                            />
-                        </div>
-                        <div className="w3-half">
-                            <img
-                                src="https://www.w3schools.com/w3images/mountains.jpg"
-                                style={{ width: "100%" }}
-                                className="w3-margin-bottom"
-                            />
-                        </div>
-                        <div className="w3-half">
-                            <img
-                                src="https://www.w3schools.com/w3images/forest.jpg"
-                                style={{ width: "100%" }}
-                                className="w3-margin-bottom"
-                            />
-                        </div>
-                        <div className="w3-half">
-                            <img
-                                src="https://www.w3schools.com/w3images/nature.jpg"
-                                style={{ width: "100%" }}
-                                className="w3-margin-bottom"
-                            />
-                        </div>
-                        <div className="w3-half">
-                            <img
-                                src="https://www.w3schools.com/w3images/snow.jpg"
-                                style={{ width: "100%" }}
-                                className="w3-margin-bottom"
-                            />
-                        </div>
-                    </div>
-                </div>
+                {!show && <Photos />}
             </div>
         </div>
     );
