@@ -1,17 +1,28 @@
-export default function Accordion() {
+import { useState } from "react";
+
+export default function Acordion() {
+    const [show, setShow] = useState(true);
+
+    let handleShow = () => {
+        setShow(!show);
+        console.log(show);
+    };
+
     return (
         <div className="w3-card w3-round">
             <div className="w3-white">
                 <button
-                    onclick="{myFunction('Demo1')}"
+                    onclick={handleShow}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-circle-o-notch fa-fw w3-margin-right"></i>{" "}
                     My Groups
                 </button>
-                <div id="Demo1" className="w3-hide w3-container">
-                    <p>Some text..</p>
-                </div>
+                {!show && (
+                    <div id="Demo1" className="w3-hide w3-container">
+                        <p>Some text..</p> : ""
+                    </div>
+                )}
                 <button
                     onclick="myFunction('Demo2')"
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
