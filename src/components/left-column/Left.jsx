@@ -1,5 +1,5 @@
 import Profile from "./Profile";
-import Accordion from "./Accordion";
+import Acordion from "./Acordion";
 import Interests from "./Interests";
 import AlertBox from "./AlertBox";
 
@@ -8,7 +8,7 @@ export default function SideBarLeft() {
         <div class="w3-col m3">
             <Profile />
             <br />
-            <Accordion />
+            <Acordion />
             <br />
             <Interests />
             <br />
