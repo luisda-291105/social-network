@@ -1,26 +1,21 @@
 import { useState, useEffect , useContext } from "react";
+import { ContectText } from "../CreatePosh";
 
 export default function Input() {
-    let [text, setText] = useState("");
 
-    function handleText(e) {
-        setText(e.target.value);
+    let [text, setText] = useContext(ContectText);
+
+    function f(e) {
+        setText(e.target.value)
     }
-
-    useEffect(() => {
-        console.log("texto modificado")
-    } , [text])
-
     return (
         <>
         <input
             className="w3-border w3-padding"
             type="text"
-            onChange={handleText}
+            onChange={f}
             placeholder="Status: Feeling Blue"
         />
-        
-        <p>{text}</p>
         </>
     );
 }

@@ -1,6 +1,7 @@
-
+import { useContext } from "react";
+import { ContectText } from "../CreatePosh";
 
 export default function TextH6() {
-    
-    return <h6 className="w3-opacity">Social Media template by w3.css </h6>;
+    let [Text ] = useContext(ContectText)
+    return <h6 className="w3-opacity">{Text}</h6>;
 }
