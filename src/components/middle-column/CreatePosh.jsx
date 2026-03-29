@@ -1,11 +1,9 @@
-import { useState , useEffect } from "react";
+
 import Input from "./createPost/Input";
-import TextH6 from "./createPost/textH6";
+import TextH6 from "./createPost/TextH6";
 import Button from "./createPost/Button";
 
 export default function CreatePosh() {
-    let [] = useState()
-
 
     return (
         <div className="w3-row-padding">
