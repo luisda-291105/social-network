@@ -1,11 +1,12 @@
-import {useState} from "react";
+import { useContext , useState} from "react";
+import { ContextComments } from "./GroupBtn";
 
 export default function BtnComment() {
-    let [inputComment , setInputComment]  = useState(false) 
-    let [comments , setComments] = useState("")
+    let [inputComment, setInputComment] = useState(false);
+    let [comments , setComments] = useContext(ContextComments);
 
     function contentComment(event) {
-        setComments(event.target.value)
+        setComments(event.target.value);
     }
 
     return (
@@ -17,8 +18,15 @@ export default function BtnComment() {
             >
                 <i className="fa fa-comment"></i>  Comment
             </button>
-            {inputComment ? <input type="text" placeholder="Comment here" onChange={contentComment} /> : ""}
-            <p>{comments}</p>
-            </>
+            {inputComment ? (
+                <input
+                    type="text"
+                    placeholder="Comment here"
+                    onChange={contentComment}
+                />
+            ) : (
+                ""
+            )}
+        </>
     );
 }
