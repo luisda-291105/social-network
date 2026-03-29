@@ -4,39 +4,49 @@ import MyEvents from "./acordionMenssage/MyEvents";
 import Photos from "./acordionMenssage/Photos";
 
 export default function Acordion() {
-    const [show, setShow] = useState(false);
+    const [Groups, setGroups] = useState(true);
+    const [Events, setEvents] = useState(true);
+    const [photos, setPhotos] = useState(true);
 
-    let handleShow = () => {
-        setShow(!show);
-    };
+    function toogleGroup() {
+        setGroups(!Groups)
+    }
+
+    function toogleEvents() {
+        setEvents(!Events)
+    }
+
+    function tooglePhotos() {
+        setPhotos(!photos)
+    }
 
     return (
         <div className="w3-card w3-round">
             <div className="w3-white">
                 <button
-                    onClick={handleShow}
+                    onClick={toogleGroup}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-circle-o-notch fa-fw w3-margin-right"></i>{" "}
                     My Groups
                 </button>
-                {!show && <MyGroups />}
+                {!Groups && <MyGroups />}
                 <button
-                    onClick={handleShow}
+                    onClick={toogleEvents}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-calendar-check-o fa-fw w3-margin-right"></i>{" "}
                     My Events
                 </button>
-                {!show && <MyEvents />}
+                {!Events && <MyEvents />}
                 <button
-                    onClick={handleShow}
+                    onClick={tooglePhotos}
                     className="w3-button w3-block w3-theme-l1 w3-left-align"
                 >
                     <i className="fa fa-users fa-fw w3-margin-right"></i> My
                     Photos
                 </button>
-                {!show && <Photos />}
+                {!photos && <Photos />}
             </div>
         </div>
     );
