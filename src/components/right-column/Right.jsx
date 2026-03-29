@@ -5,7 +5,7 @@ import FaBug from "./FaBug";
 
 export default function Right() {
     return (
-        <div class="w3-col m2">
+        <div className="w3-col m2">
             <UpcomingEvent />
             <br />
             <FriendRequest />

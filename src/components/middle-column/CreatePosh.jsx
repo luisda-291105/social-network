@@ -8,7 +8,7 @@ export default function CreatePosh() {
                             Social Media template by w3.css
                         </h6>
                         <p
-                            contenteditable="true"
+                            contentEditable="true"
                             className="w3-border w3-padding"
                         >
                             Status: Feeling Blue
