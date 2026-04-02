@@ -5,7 +5,7 @@ import AlertBox from "./AlertBox";
 
 export default function SideBarLeft() {
     return (
-        <div class="w3-col m3">
+        <div className="w3-col m3">
             <Profile />
             <br />
             <Acordion />

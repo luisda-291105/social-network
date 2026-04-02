@@ -8,7 +8,7 @@ function App() {
     return (
         <>
         <NavBar />
-        <div class="w3-container w3-content" style={{maxWidth:"1400px" , marginTop:"80px"}}>
+        <div className="w3-container w3-content" style={{maxWidth:"1400px" , marginTop:"80px"}}>
             <Left />
             <Middle />
             <Right />
