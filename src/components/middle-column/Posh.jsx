@@ -17,8 +17,6 @@ export default function Posh() {
         },
     ];
 
-    let image =
-        "https://imgs.search.brave.com/Iw6FYICfb9udkU08V5lzNPi6gJK81zZlMIs5_68ZyS0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvY29v/bGVzdC1uYXJ1dG8t/d2l0aC1nbG93aW5n/LWxpZ2h0LXRpeWJq/eDN1MjdtMGo0MXQu/anBn";
     let [txtComment, setTxtComment] = useState("");
     let [listData, setListData] = useState(listCom);
     let [btnComment, setBtnComment] = useState(false);
@@ -27,7 +25,7 @@ export default function Posh() {
     ];
 
     function local_storage(com) {
-        storage.push({id: storage.length +1 , txt : com})
+        storage.push({ id: storage.length + 1, txt: com });
 
         console.log(`storage = ${storage}`);
 
@@ -38,8 +36,11 @@ export default function Posh() {
         setTxtComment(c);
         console.log(txtComment);
         local_storage(c);
-
     }
+
+    useEffect(() => {
+        listData = JSON.parse(localStorage.getItem("comentarios"))
+    },[])
 
     useEffect(() => {
         {
@@ -48,9 +49,7 @@ export default function Posh() {
                     ...listData,
                     { id: listData.length + 1, txt: txtComment },
                 ]);
-                
         }
-
     }, [txtComment]);
 
     return (
@@ -75,7 +74,11 @@ export default function Posh() {
             </div>
 
             <div className="card-body">
-                <img src={image} className="card-img-top" alt="imagen..." />
+                <img
+                    src="https://imgs.search.brave.com/Iw6FYICfb9udkU08V5lzNPi6gJK81zZlMIs5_68ZyS0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvY29v/bGVzdC1uYXJ1dG8t/d2l0aC1nbG93aW5n/LWxpZ2h0LXRpeWJq/eDN1MjdtMGo0MXQu/anBn"
+                    className="card-img-top"
+                    alt="imagen..."
+                />
             </div>
 
             <ul className="list-group list-group-flush">
