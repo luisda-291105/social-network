@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import ComentForm from "./comentForm";
 import ListComment from './listComments';
 
 
 export default function Posh() {
-    let image = "https://imgs.search.brave.com/Iw6FYICfb9udkU08V5lzNPi6gJK81zZlMIs5_68ZyS0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvY29v/bGVzdC1uYXJ1dG8t/d2l0aC1nbG93aW5n/LWxpZ2h0LXRpeWJq/eDN1MjdtMGo0MXQu/anBn";
-    
+
+    let [like, setLike] = useState(0);
 
     let listCom = [
         {
@@ -17,11 +17,22 @@ export default function Posh() {
         {
             id:2,
             txt:"voy es volando"
-        }
+        } 
     ];
 
-    let [like, setLike] = useState(0);
+    let image = "https://imgs.search.brave.com/Iw6FYICfb9udkU08V5lzNPi6gJK81zZlMIs5_68ZyS0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvY29v/bGVzdC1uYXJ1dG8t/d2l0aC1nbG93aW5n/LWxpZ2h0LXRpeWJq/eDN1MjdtMGo0MXQu/anBn";
+    let [txtComment , setTxtComment] = useState("")
+    let  [listData , setListData] = useState(listCom)
     let [btnComment, setBtnComment] = useState(false);
+
+    function getCommenData(c) {
+        setTxtComment(c)
+        console.log(txtComment);
+        }
+
+    useEffect( () => {
+        {txtComment && setListData([...listData , {id: (listData.length +1) , txt : txtComment}])}
+    },[txtComment])
 
     return (
         <div className="card m-auto my-4" style={{ width: "25rem" }}>
@@ -51,7 +62,7 @@ export default function Posh() {
             <ul className="list-group list-group-flush">
                 <li className="list-group-item d-flex justify-content-around">
                     <span>👍🤣❤️ {like}</span>
-                    <span>2 mil 💭</span>
+                    <span>{listData.length} 💭</span>
                 </li>
                 <li className="list-group-item d-flex justify-content-around">
                     <button
@@ -68,9 +79,9 @@ export default function Posh() {
                     </button>
                 </li>
             </ul>
-
-                {btnComment && <ComentForm />}
-            <ListComment listComData = {listCom} />
+    
+                {btnComment && <ComentForm getCommenData={getCommenData}/>}
+            <ListComment listComData = {listData} />
         </div>
     );
 }

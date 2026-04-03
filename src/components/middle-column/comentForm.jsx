@@ -1,6 +1,6 @@
-import  { useState ,useContext } from "react";
+import  { useState  } from "react";
 
-export default function ComentForm() {
+export default function ComentForm({getCommenData}) {
     let [comment ,  setComment] = useState("")
     let getComment  = (e) =>{
         setComment(e.target.value)
@@ -13,7 +13,9 @@ export default function ComentForm() {
             onChange={getComment}
             ></textarea>
 
-            <button className="btn btn-primary mt-3 ">comentar </button>
+            <button className="btn btn-primary mt-3 "
+            onClick={() => getCommenData(comment)}
+            >comentar </button>
         </div>
     );
 }
