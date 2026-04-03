@@ -6,7 +6,7 @@ export default function Posh() {
     let [like, setLike] = useState(0);
 
     let listCom = [
-        {
+        /* {
             id: 1,
             txt: `Some quick example text to build on the card title and make
                     up the bulk of the card’s content.`,
@@ -14,7 +14,7 @@ export default function Posh() {
         {
             id: 2,
             txt: "voy es volando",
-        },
+        }, */
     ];
 
     let [txtComment, setTxtComment] = useState("");
@@ -103,7 +103,7 @@ export default function Posh() {
             </ul>
 
             {btnComment && <ComentForm getCommenData={getCommenData} />}
-            <ListComment listComData={listData} />
+            <ListComment  storageData={storage} />
         </div>
     );
 }
