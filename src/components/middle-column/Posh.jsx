@@ -26,11 +26,6 @@ export default function Posh() {
         ...listData,
     ];
 
-    function generarID() {
-        const maxId = Math.max(...listData.map((item) => item.id) , 0)
-
-        return maxId+1
-    }
     function local_storage(com) {
         storage.push({id: storage.length +1 , txt : com})
 
