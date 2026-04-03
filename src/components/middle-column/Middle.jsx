@@ -1,10 +1,10 @@
-import CreatePosh from "./CreatePosh";
+// import CreatePosh from "./CreatePosh";
 import Posh from "./Posh";
 
 export default function Middle() {
     return (
         <div className="w3-col m7">
-            <CreatePosh />
+            {/* <CreatePosh /> */}
             <Posh />
         </div>
     );
