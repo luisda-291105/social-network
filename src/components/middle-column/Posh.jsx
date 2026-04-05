@@ -4,6 +4,12 @@ import ListComment from "./listComments";
 
 export default function Posh() {
     let [like, setLike] = useState(0);
+    // let storageLike = [...like]
+    let countLikeStorage = () => {
+        setLike(like + 1)
+        localStorage.setItem("countLike" , JSON.stringify(like))
+
+    }
 
     let listCom = [
         /* {
@@ -52,6 +58,11 @@ export default function Posh() {
         }
     }, [txtComment]);
 
+    function compartir() {
+        alert("Aun no esta disponible esta funcionalidad...")
+    }
+
+
     return (
         <div className="card m-auto my-4" style={{ width: "25rem" }}>
             <div className="m-2 d-flex ">
@@ -66,6 +77,11 @@ export default function Posh() {
                     <span style={{ fontSize: "10px" }} className="w3-opacity">
                         1 min
                     </span>
+                </div>
+            
+                <div className="d-flex ms-auto gap-2">
+                    <i className="bi bi-three-dots fs-4"></i>
+                    <i className="bi bi-x fs-4"></i>
                 </div>
             </div>
 
@@ -83,27 +99,42 @@ export default function Posh() {
 
             <ul className="list-group list-group-flush">
                 <li className="list-group-item d-flex justify-content-around">
-                    <span>👍🤣❤️ {like}</span>
-                    <span>{listData.length} 💭</span>
+                    <span className="d-flex gap-1 me-auto">
+                        <i className="bi bi-hand-thumbs-up-fill"></i>
+                        <i className="bi bi-emoji-smile"></i>
+                        <i className="bi bi-heart-fill"></i> {JSON.parse(localStorage.getItem("countLike"))}</span>
+                    <span className=" d-flex gap-2">{storage.length} <i className="bi bi-chat-dots"></i></span>
                 </li>
                 <li className="list-group-item d-flex justify-content-around">
                     <button
-                        className="btn btn-outline-secondary"
-                        onClick={() => setLike(like + 1)}
+                        className="btn "
+                        onClick={countLikeStorage}
                     >
-                        👍 like
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        
+                        <span className="ps-2">like</span>
                     </button>
                     <button
-                        className="btn btn-outline-secondary"
+                        className="btn "
                         onClick={() => setBtnComment(!btnComment)}
                     >
-                        💭 comments
+                        <i className="bi bi-chat-dots"></i>
+                        
+                        <span className="ps-2">comment</span>
+                    </button>
+                    <button
+                        className="btn"
+                        onClick={compartir}
+                    >
+                        <i class="bi bi-share"></i>
+                        <span className="ps-2">share</span>
                     </button>
                 </li>
             </ul>
 
-            {btnComment && <ComentForm getCommenData={getCommenData} />}
-            <ListComment  storageData={storage} />
+            {btnComment && <ComentForm getCommenData={getCommenData} /> }
+            {btnComment && <ListComment  storageData={storage} /> }
+            
         </div>
     );
 }
