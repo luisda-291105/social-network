@@ -1,4 +1,3 @@
-import CreatePosh from "./CreatePosh";
 import Posh from "./Posh";
 
 export default function Middle() {
