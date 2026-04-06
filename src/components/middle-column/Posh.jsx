@@ -100,9 +100,9 @@ export default function Posh() {
             <ul className="list-group list-group-flush">
                 <li className="list-group-item d-flex justify-content-around">
                     <span className="d-flex gap-1 me-auto">
-                        <i className="bi bi-hand-thumbs-up-fill"></i>
+                        <i className="bi bi-hand-thumbs-up"></i>
                         <i className="bi bi-emoji-smile"></i>
-                        <i className="bi bi-heart-fill"></i> {JSON.parse(localStorage.getItem("countLike"))}</span>
+                        <i className="bi bi-heart"></i> {JSON.parse(localStorage.getItem("countLike"))}</span>
                     <span className=" d-flex gap-2">{storage.length} <i className="bi bi-chat-dots"></i></span>
                 </li>
                 <li className="list-group-item d-flex justify-content-around">
@@ -110,7 +110,7 @@ export default function Posh() {
                         className="btn "
                         onClick={countLikeStorage}
                     >
-                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <i className="bi bi-hand-thumbs-up"></i>
                         
                         <span className="ps-2">like</span>
                     </button>
@@ -126,7 +126,7 @@ export default function Posh() {
                         className="btn"
                         onClick={compartir}
                     >
-                        <i class="bi bi-share"></i>
+                        <i className="bi bi-share"></i>
                         <span className="ps-2">share</span>
                     </button>
                 </li>

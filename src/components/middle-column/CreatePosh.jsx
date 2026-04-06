@@ -7,12 +7,12 @@ export default function CreatePosh() {
                         <h6 className="w3-opacity">
                             Social Media template by w3.css
                         </h6>
-                        <p
-                            contentEditable="true"
+                        <input
+                            
                             className="w3-border w3-padding"
-                        >
-                            Status: Feeling Blue
-                        </p>
+                            placeholder="Status: Feeling Blue"
+                            style={{width:"100%" , marginBottom:"10px"}}
+                        />
                         <button type="button" className="w3-button w3-theme">
                             <i className="fa fa-pencil"></i>  Post
                         </button>
