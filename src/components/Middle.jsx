@@ -1,5 +1,5 @@
-import Posh from "./Posh";
-import CreatePosh from "./CreatePosh";
+import CreatePosh from './CreatePosh'
+import Posh from './Posh'
 
 export default function Middle() {
     return (
