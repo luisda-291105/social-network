@@ -1,23 +1,16 @@
-import NavBar from "./components/NavBar";
-import Left from "./components/Left";
-import Middle from "./components/Middle";
-import Right from "./components/Right";
-import Footer from "./components/Footer";
+import { Route , Routes } from "react-router-dom";
+
+import Home from './pages/Home'
+import ProfilePage from "./pages/Profile";
+import NotFunt from "./components/NotFunt";
 
 function App() {
     return (
-        <>
-        <NavBar />
-            <div
-                className="w3-container w3-content"
-                style={{ maxWidth: "1400px", marginTop: "80px" }}
-            >
-                <Left />
-                <Middle />
-                <Right />
-            </div>
-            <Footer />
-        </>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="Profile" element={<ProfilePage />} />
+            <Route path="*" element={<NotFunt />} />
+        </Routes>
     );
 }
 
