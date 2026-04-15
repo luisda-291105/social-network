@@ -7,7 +7,7 @@ export default function NavBar() {
                 <Link
                     className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
                     // href="javascript:void(0);"
-                    to=""
+                    to="/"
                     // onClick="openNav()"
                 >
                     <i className="fa fa-bars"></i>
@@ -19,21 +19,21 @@ export default function NavBar() {
                     <i className="fa fa-home w3-margin-right"></i>Logo
                 </Link>
                 <Link
-                    to="#"
+                    to="/"
                     className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                     title="News"
                 >
                     <i className="fa fa-globe"></i>
                 </Link>
                 <Link
-                    to="friends"
+                    to="/friends"
                     className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                     title="Account Settings"
                 >
                     <i className="fa fa-user"></i>
                 </Link>
                 <Link
-                    to="notifications"
+                    to="/notifications"
                     className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                     title="Messages"
                 >
@@ -53,19 +53,19 @@ export default function NavBar() {
                         className="w3-dropdown-content w3-card-4 w3-bar-block"
                         style={{width:"300px"}}
                     >
-                        <Link to="friends" className="w3-bar-item w3-button">
+                        <Link to="/friends" className="w3-bar-item w3-button">
                             One new friend request
                         </Link>
-                        <Link to="#" className="w3-bar-item w3-button">
+                        <Link to="/" className="w3-bar-item w3-button">
                             John Doe posted on your wall
                         </Link>
-                        <Link to="#" className="w3-bar-item w3-button">
+                        <Link to="/" className="w3-bar-item w3-button">
                             Jane likes your post
                         </Link>
                     </div>
                 </div>
                 <Link
-                    to="Profile"
+                    to="/Profile"
                     className="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
                     title="My Account"
                 >
