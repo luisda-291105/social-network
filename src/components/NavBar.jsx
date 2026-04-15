@@ -26,7 +26,7 @@ export default function NavBar() {
                     <i className="fa fa-globe"></i>
                 </Link>
                 <Link
-                    to="#"
+                    to="friends"
                     className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                     title="Account Settings"
                 >
@@ -53,7 +53,7 @@ export default function NavBar() {
                         className="w3-dropdown-content w3-card-4 w3-bar-block"
                         style={{width:"300px"}}
                     >
-                        <Link to="#" className="w3-bar-item w3-button">
+                        <Link to="friend" className="w3-bar-item w3-button">
                             One new friend request
                         </Link>
                         <Link to="#" className="w3-bar-item w3-button">
