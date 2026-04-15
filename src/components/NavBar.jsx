@@ -53,7 +53,7 @@ export default function NavBar() {
                         className="w3-dropdown-content w3-card-4 w3-bar-block"
                         style={{width:"300px"}}
                     >
-                        <Link to="friend" className="w3-bar-item w3-button">
+                        <Link to="friends" className="w3-bar-item w3-button">
                             One new friend request
                         </Link>
                         <Link to="#" className="w3-bar-item w3-button">
@@ -77,6 +77,28 @@ export default function NavBar() {
                     />
                 </Link>
             </div>
+        </div>
+    );
+}
+
+export function NavBarMobil() {
+    return (
+        <div
+            id="navDemo"
+            className="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large"
+        >
+            <a href="#" className="w3-bar-item w3-button w3-padding-large">
+                Link 1
+            </a>
+            <a href="#" className="w3-bar-item w3-button w3-padding-large">
+                Link 2
+            </a>
+            <a href="#" className="w3-bar-item w3-button w3-padding-large">
+                Link 3
+            </a>
+            <a href="#" className="w3-bar-item w3-button w3-padding-large">
+                My Profile
+            </a>
         </div>
     );
 }
