@@ -33,7 +33,7 @@ export default function NavBar() {
                     <i className="fa fa-user"></i>
                 </Link>
                 <Link
-                    to="#"
+                    to="notifications"
                     className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
                     title="Messages"
                 >
